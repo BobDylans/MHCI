@@ -1,0 +1,32 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mgci?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+  jackson:
+    time-zone: GMT+8
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500MB
+      max-request-size: 500MB
+  application:
+    name: uploadService8007
+  resources:
+    static-locations: file:D:/sxcourse/file/order,file:D:/sxcourse/file/avatar,file:D:/sxcourse/file/video
+  mvc:
+    static-path-pattern: /file/**
+application:
+  upload-path: D:/sxcourse/file
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
